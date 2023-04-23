@@ -83,6 +83,7 @@ const offsetDecode = document.getElementById('offsetDecode');
 const decoding = document.getElementById('decoding');
 const resultDecode = document.getElementById('resultDecode');
 
+
 function removeInner(id){
     let elem = document.getElementById(id);
     if(elem.classList.contains('error_input')){
@@ -94,14 +95,14 @@ function removeInner(id){
 coding.addEventListener("click", () => {
     resultCode.classList.remove('good_result');
     resultCode.innerHTML='';
-    let offsetValue = Number(offset.value)
+    let offsetValue = Number(offset.value);
     if(!(offsetValue instanceof Number) && isNaN(offsetValue)){
-        offset.value = 'Не допустимое значение смещения кода!'
-        offset.classList.add('error_input')
+        offset.value = 'Не допустимое значение смещения кода!';
+        offset.classList.add('error_input');
         return;
     } else if (!offsetValue) {
-        offset.value = 'Значение смещения кода не может быть пустым или равным нулю!'
-        offset.classList.add('error_input')
+        offset.value = 'Значение смещения кода не может быть пустым или равным нулю!';
+        offset.classList.add('error_input');
         return;
     }
     if (textCode.value == '') {
@@ -109,7 +110,9 @@ coding.addEventListener("click", () => {
         textCode.classList.add('error_input');
     }  else {
         resultCode.innerHTML = caesarCoder(textCode.value, offsetValue);
-        resultCode.classList.add('good_result')
+        resultCode.classList.add('good_result');
+        innerHTMLTextCode = resultCode.innerHTML;
+        console.log(innerHTMLTextCode);
     }
 
 })
@@ -117,14 +120,14 @@ coding.addEventListener("click", () => {
 decoding.addEventListener("click", () => {
     resultDecode.classList.remove('good_result');
     resultDecode.innerHTML='';
-    let offsetDecodeValue = Number(offsetDecode.value)
+    let offsetDecodeValue = Number(offsetDecode.value);
     if(!(offsetDecodeValue instanceof Number) && isNaN(offsetDecodeValue)){
-        offsetDecode.value = 'Не допустимое значение смещения кода!'
-        offsetDecode.classList.add('error_input')
+        offsetDecode.value = 'Не допустимое значение смещения кода!';
+        offsetDecode.classList.add('error_input');
         return;
     } else if (!offsetDecodeValue) {
-        offsetDecode.value = 'Значение смещения кода не может быть пустым или равным нулю!'
-        offsetDecode.classList.add('error_input')
+        offsetDecode.value = 'Значение смещения кода не может быть пустым или равным нулю!';
+        offsetDecode.classList.add('error_input');
         return;
     }
     if (textDecode.value == '') {
@@ -136,4 +139,6 @@ decoding.addEventListener("click", () => {
     }
 
 })
+
+
 

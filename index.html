@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Цезарь - простое шифрование/дешифрование текста</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <script src="https://unpkg.com/vue@next"></script>
 </head>
-<body>
+<body class="for_background_body">
 
 <h2>Шифрование текста:</h2>
 <div id="forCoding" class="coding">
@@ -15,7 +17,7 @@
         <textarea id="textCode"  onfocus="removeInner('textCode')"></textarea>
         <label for="offset">Введите число, на которое будет смещаться код  от -32 до 32:</label>
         <input id="offset" type="text" onfocus="removeInner('offset')">
-        <input type="button" id="coding" value="Зашифровать">
+        <button type="button" id = "coding" class="btn btn-primary btn-lg">Зашифровать</button>
     </div>
     <div class="result_code" id="resultCode">
     </div>
@@ -28,15 +30,14 @@
         <textarea id="textDecode" onfocus="removeInner('textDecode')"></textarea>
         <label for="offsetDecode">Введите число смещения кода от -32 до 32:</label>
         <input id="offsetDecode" type="text" onfocus="removeInner('offsetDecode')">
-        <input type="button" id="decoding" value="Дешифровать">
+        <button type="button" id = "decoding" class="btn btn-primary btn-lg">Дешифровать</button>
     </div>
     <div class="result_code" id="resultDecode" >
     </div>
-
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="index.js"></script>
 </body>
 
-<script type="text/javascript" src="index.js"></script>
 
 </html>
