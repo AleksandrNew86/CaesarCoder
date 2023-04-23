@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Цезарь - простое шифрование/дешифрование текста</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+<h2>Шифрование текста:</h2>
+<div id="forCoding" class="coding">
+    <div class="input_code">
+        <label for="textCode">Введите текст, который хотите зашифровать:</label>
+        <textarea id="textCode"  onfocus="removeInner('textCode')"></textarea>
+        <label for="offset">Введите число, на которое будет смещаться код  от -32 до 32:</label>
+        <input id="offset" type="text" onfocus="removeInner('offset')">
+        <input type="button" id="coding" value="Зашифровать">
+    </div>
+    <div class="result_code" id="resultCode">
+    </div>
+</div>
+
+<h2>Дешифрование текста:</h2>
+<div id="forDecoding" class="coding">
+    <div class="input_code">
+        <label for="textDecode">Введите текст, который хотите дешифровать:</label>
+        <textarea id="textDecode" onfocus="removeInner('textDecode')"></textarea>
+        <label for="offsetDecode">Введите число смещения кода от -32 до 32:</label>
+        <input id="offsetDecode" type="text" onfocus="removeInner('offsetDecode')">
+        <input type="button" id="decoding" value="Дешифровать">
+    </div>
+    <div class="result_code" id="resultDecode" >
+    </div>
+
+</div>
+
+</body>
+
+<script type="text/javascript" src="index.js"></script>
+
+</html>
